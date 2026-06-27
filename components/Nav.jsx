@@ -39,7 +39,38 @@ export default function Nav({ tab, setTab }) {
               margin: 0, }}>
             Fitters<span style={{ color: "var(--dusty-rose)" }}>.</span>
           </h1>
-          <span style={{ fontSize: 11, color: "var(--warm-gray)" }}>MVP</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
+            {userEmail && (
+              <span
+                style={{
+                  fontSize: 11,
+                  color: "var(--warm-gray)",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  maxWidth: 140,
+                }}
+                title={userEmail}
+              >
+                {userEmail}
+              </span>
+            )}
+            <button
+              onClick={onLogout}
+              style={{
+                background: "none",
+                border: "none",
+                color: "var(--warm-gray)",
+                fontSize: 11,
+                cursor: "pointer",
+                textDecoration: "underline",
+                padding: 0,
+                flexShrink: 0,
+              }}
+            >
+              Log out
+            </button>
+          </div>
         </div>
 
         <div style={{ display: "flex", gap: 0 }}>
